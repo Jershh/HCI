@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riverdale Hotel</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      background-color: #e6cea0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #007BFF !important;
+    }
+    .nav-link {
+      color: #007BFF !important;
+    }
+    .frame_swiper {
+      margin: 2rem auto;
+      width: 60%; /* Adjust the width to zoom in or out */
+      overflow: hidden; /* Hide other images */
+    }
+    .swiper-wrapper {
+      display: flex;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: transform 0.5s ease; /* Smooth zoom-out transition */
+    }
+    .kvcarousel_image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease; /* Smooth zoom-out transition */
+    }
+    .caption {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: -3rem;
+      text-align: center;
+      color: #fff;
+      width: 80%;
+    }
+    footer {
+      background-color: #556b2f;
+      padding: 1rem 0;
+      text-align: center;
+      color: white;
+    }
+    .social-icon {
+      color: white;
+    }
+    .chatBot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border: 3px solid #2F8D46;
+      border-radius: 10px;
+      width: 300px;
+      height: 400px;
+      background: rgb(255, 255, 255);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      z-index: 1000; /* Ensure chatbot is above other elements */
+    }
+    .chatBot header {
+      background: #000;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chatBot header h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+    .chatBot header #cross {
+      cursor: pointer;
+      color: white;
+      font-weight: bolder;
+      font-size: 18px;
+    }
+    .chatbox {
+      padding: 15px;
+      list-style: none;
+      overflow-y: auto;
+      height: 270px;
+      margin: 0;
+    }
+    .chatbox li {
+      margin-bottom: 10px;
+    }
+    .chat p {
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 70%;
+      word-wrap: break-word;
+      margin: 0;
+    }
+    .chat-outgoing p {
+      background-color: #162887;
+      align-self: flex-end;
+      color: #fff;
+    }
+    .chat-incoming p {
+      background-color: #eaeaea;
+      color: #000;
+    }
+    .chat-input {
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+    }
+    .chat-input textarea {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      resize: none;
+      outline: none;
+      background-color: #fff; /* Changed to white for better readability */
+      font-size: 14px;
+    }
+    #sendBTN {
+      padding: 8px 20px;
+      border: 0;
+      outline: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 7px;
+      background-color: #2F8D46;
+      cursor: pointer;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">RIVERDALE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="room.html">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booking.html">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="frame_swiper frame_swiper_image image-swiper-container swiper-container">
+  <div class="swiper-wrapper">
+    <div class="image-swiper-slide swiper-slide">
+      <img class="kvcarousel_image" src="SLIDE1.png" alt="Hotel Image 1">
+      <div class="caption">
+        <h5>Welcome to Riverdale</h5>
+        <p>Experience luxury like never before.</p>
+      </div>
+    </div>
+    <div class="image-swiper-slide swiper-slide">
+      <img class="kvcarousel_image" src="SLIDE2.png" alt="Hotel Image 2">
+      <div class="caption">
+        <h5>Elegant Rooms</h5>
+        <p>Comfort and style in every room.</p>
+      </div>
+    </div>
+    <div class="image-swiper-slide swiper-slide">
+      <img class="kvcarousel_image" src="SLIDE3.png" alt="Hotel Image 3">
+      <div class="caption">
+        <h5>Exquisite Dining</h5>
+        <p>Savor the finest cuisine.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        let slides = document.querySelectorAll('.swiper-slide img');
+        slides.forEach(slide => {
+          slide.style.transform = 'scale(1)'; // Zoom-in effect
+        });
+      },
+      slideChangeTransitionEnd: function () {
+        let activeSlide = document.querySelector('.swiper-slide-active img');
+        activeSlide.style.transform = 'scale(0.9)'; // Zoom-out effect
+      }
+    }
+  });
+
+  // Initial zoom-out for the first slide
+  document.addEventListener('DOMContentLoaded', function() {
+    let activeSlide = document.querySelector('.swiper-slide-active img');
+    activeSlide.style.transform = 'scale(0.9)'; // Zoom-out effect
+  });
+</script>
+
+<div class="chatBot">
+  <header>
+    <h1>Chat with us!</h1>
+    <div id="cross" onclick="closeChat()">X</div>
+  </header>
+  <div id="message-section" class="chatbox"></div>
+  <div class="chat-input">
+    <textarea id="input" placeholder="Type your message here..."></textarea>
+    <button id="sendBTN" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+<script src="script.js" defer></script>
+
+<footer class="mt-5">
+  <div class="container">
+    <p>&copy; 2024 Riverdale Hotel. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
